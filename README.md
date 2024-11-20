@@ -1,79 +1,75 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+## eazydot Loader
+Elevate your Loader component with these customizable dot animation.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+# Installation
+npm i loadingdot-animation
 
-## Step 1: Start the Metro Server
+# Based on the colors array you'll get the dot count.
+For eg:- if you want to display 4 dots you have to pass 4 colors in the colors prop.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+# Restart the Application and clean the cache if there's change in the props.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+# Properties 
+| Prop           | Type     | Default Value                | Description                           |
+|----------------|----------|------------------------------|---------------------------------------|
+| `size`         | `number` | `10`                         | The diameter of each dot.             |
+| `gap`          | `number` | `5`                          | The horizontal spacing between the dots. |
+| `bounceHeight` | `number` | `10`                         | The height of the bounce animation.   |
+| `colors`       | `string[]` | `['#3498db', '#e74c3c', '#f1c40f']` | Array of colors for the dots.         |
 
-```bash
-# using npm
-npm start
 
-# OR using Yarn
-yarn start
-```
+# Example Usage
 
-## Step 2: Start your Application
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+import DotAnimation from 'loadingdot-animation';
 
-### For Android
+const { height, width } = Dimensions.get('window');
 
-```bash
-# using npm
-npm run android
+const Loader = ({ loading, loadingTxt, loaderSub }) => {
+  if (!loading) return null;
 
-# OR using Yarn
-yarn android
-```
+  return (
+    <View style={styles.container}>
+      <DotAnimation
+        size={10}
+        gap={10}
+        bounceHeight={20}
+        colors={['#ff5733', '#33ff57', '#3357ff']} // Custom colors
+      />
+      {loadingTxt ? <Text style={styles.laodtxt}>{loadingTxt}</Text> : null}
+      {loaderSub ? <Text style={styles.laodtxtSub}>{loaderSub}</Text> : null}
+    </View>
+  );
+};
 
-### For iOS
+const styles = StyleSheet.create({
+  container: {
+    height,
+    width,
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 2,
+    backgroundColor: 'rgba(255,240,240,0.6)',
+  },
+   laodtxt: {
+    fontSize: 18,
+    color: colors.productPriceColor,
+    fontFamily: 'Manrope-Bold',
+  },
+  laodtxtSub: {
+    fontSize: 16,
+    color: colors.productPriceColor,
+    fontFamily: 'Manrope-SemiBold',
+  },
+});
 
-```bash
-# using npm
-npm run ios
+export default Loader;
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
