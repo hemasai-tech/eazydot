@@ -1,6 +1,6 @@
 {
   "name": "loadingdot-animation",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "private": false,
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,7 +16,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "build": "babel App.js index.js --out-dir lib --extensions \".js,.jsx,.ts,.tsx\"",
+    "build": "babel App.js index.js --out-dir lib",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
