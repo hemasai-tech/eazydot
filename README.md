@@ -1,29 +1,33 @@
+# eazydot Loader
 
-## eazydot Loader
-Elevate your Loader component with these customizable dot animation.
+Elevate your Loader component with these customizable dot animations.
 
-# Installation
+## Installation
+
+```sh
 npm i loadingdot-animation
+```
 
-# Based on the colors array you'll get the dot count.
-For eg:- if you want to display 4 dots you have to pass 4 colors in the colors prop.
+## Usage
 
-# Restart the Application and clean the cache if there's change in the props.
+The number of dots displayed is based on the length of the `colors` array. For example, if you want to display 4 dots, you must pass 4 colors in the `colors` prop.
 
-# Properties 
-| Prop           | Type     | Default Value                | Description                           |
-|----------------|----------|------------------------------|---------------------------------------|
-| `size`         | `number` | `10`                         | The diameter of each dot.             |
-| `gap`          | `number` | `5`                          | The horizontal spacing between the dots. |
-| `bounceHeight` | `number` | `10`                         | The height of the bounce animation.   |
-| `colors`       | `string[]` | `['#3498db', '#e74c3c', '#f1c40f']` | Array of colors for the dots.         |
+> **Note:** Restart the application and clear the cache if you change the props.
 
+## Properties
 
-# Example Usage
+| Prop           | Type        | Default Value                         | Description                              |
+|---------------|------------|-------------------------------------|------------------------------------------|
+| `size`        | `number`    | `10`                                | The diameter of each dot.                |
+| `gap`         | `number`    | `5`                                 | The horizontal spacing between the dots. |
+| `bounceHeight`| `number`    | `10`                                | The height of the bounce animation.      |
+| `colors`      | `string[]`  | `['#3498db', '#e74c3c', '#f1c40f']` | Array of colors for the dots.            |
 
+## Example Usage
+
+```jsx
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-
 import DotAnimation from 'loadingdot-animation';
 
 const { height, width } = Dimensions.get('window');
@@ -39,8 +43,8 @@ const Loader = ({ loading, loadingTxt, loaderSub }) => {
         bounceHeight={20}
         colors={['#ff5733', '#33ff57', '#3357ff']} // Custom colors
       />
-      {loadingTxt ? <Text style={styles.laodtxt}>{loadingTxt}</Text> : null}
-      {loaderSub ? <Text style={styles.laodtxtSub}>{loaderSub}</Text> : null}
+      {loadingTxt ? <Text style={styles.loadTxt}>{loadingTxt}</Text> : null}
+      {loaderSub ? <Text style={styles.loadTxtSub}>{loaderSub}</Text> : null}
     </View>
   );
 };
@@ -59,17 +63,17 @@ const styles = StyleSheet.create({
     zIndex: 2,
     backgroundColor: 'rgba(255,240,240,0.6)',
   },
-   laodtxt: {
+  loadTxt: {
     fontSize: 18,
-    color: colors.productPriceColor,
+    color: '#333', // Adjust as needed
     fontFamily: 'Manrope-Bold',
   },
-  laodtxtSub: {
+  loadTxtSub: {
     fontSize: 16,
-    color: colors.productPriceColor,
+    color: '#555', // Adjust as needed
     fontFamily: 'Manrope-SemiBold',
   },
 });
 
 export default Loader;
-
+```
