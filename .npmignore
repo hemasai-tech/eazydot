@@ -5,7 +5,6 @@ node_modules/
 ios/
 android/
 *.log
-!src/assets
 
 # Ignore configuration files:
 .babelrc

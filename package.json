@@ -1,6 +1,6 @@
 {
   "name": "loadingdot-animation",
-  "version": "0.1.19",
+  "version": "0.1.2",
   "private": false,
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,7 +8,8 @@
     "lib/",
     "package.json",
     "README.md",
-    "lib/index.d.ts"
+    "lib/index.d.ts",
+    "assets/"
   ],
   "scripts": {
     "android": "react-native run-android",

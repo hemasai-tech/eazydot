@@ -23,6 +23,8 @@ The number of dots displayed is based on the length of the `colors` array. For e
 | `bounceHeight`| `number`    | `10`                                | The height of the bounce animation.      |
 | `colors`      | `string[]`  | `['#3498db', '#e74c3c', '#f1c40f']` | Array of colors for the dots.            |
 
+## Preview
+![DotAnimation Preview](assets/loader-gif.gif)
 ## Example Usage
 
 ```jsx
